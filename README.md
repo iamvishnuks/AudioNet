@@ -8,7 +8,10 @@ We will see how to create a speaker recognition using Inception.
 
 # Speaker recognition
 
-Before we begin we need data to train the model. Just for our experiment we can download any speech of great people from youtube as mp3. I have written a script to convert mp3's to wav files and then to process the wav file to make spectrogram out of it. To continnue with this experiment ensure this  [file][drop] is downloaded and extracted and kept in same folder where scripts folder you have downloaded.
+Before we begin we need data to train the model. Just for our experiment we can download any speech of great people from youtube as mp3. I have written a script to convert mp3's to wav files and then to process the wav file to make spectrogram out of it. To continnue with this experiment ensure this  [file][drop] is downloaded and extracted and kept in same folder where scripts folder you have downloaded. If you are using your mp3 files please check whether it is dual channel or not. If not please convert it to dual channel by using sox command in terminal.
+```sh
+$ sox testmono.mp3 -c testdual.mp3
+```
 
 Steps in our experiment:
   - Data preparation
