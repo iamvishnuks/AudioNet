@@ -63,10 +63,14 @@ def graph_spectrogram(wav_file):
                 aspect='normal',
                 bbox_inches='tight',
                 pad_inches=0)  # Spectrogram saved as a .png
-    im = Image.open(wav_file.split('.wav')[0] + '.png')
-    rgb_im = im.convert('RGB')
-    rgb_im.save(wav_file.split('.png')[0] + '.jpg')
+    try:
+      im = Image.open(wav_file.split('.wav')[0] + '.png')
+      rgb_im = im.convert('RGB')
+      rgb_im.save(wav_file.split('.png')[0] + '.jpg')
+    except Exception as e:
+      print e
     if os.path.exists(wav_file.split('.wav')[0] + '.png'):
+        os.system('convert '+(wav_file.split('.wav')[0] + '.png') + ' '+(wav_file.split('.wav')[0] + '.jpg'))
         os.remove(wav_file.split('.wav')[0] + '.png')
 
 
@@ -145,5 +149,5 @@ if __name__ == '__main__':
                 move_images(path)
                 print "All mp3 files processed completely"
         except Exception as e:
+            move_images(path)
             print "Something went wrong: ", e
-
