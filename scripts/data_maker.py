@@ -21,8 +21,15 @@ def mp3towav(path):
       for file in files:
           mp = file
           wa = file.replace('mp3', 'wav')
-          subprocess.call(['sox', mp, '-e', 'mu-law', '-r', '16k', wa, 'remix', '1,2'])
-
+          try:
+            print("Converting using sox")
+            subprocess.call(['sox', mp, '-e', 'mu-law', '-r', '16k', wa, 'remix', '1,2'])
+          except Exception as e:
+            print("Converting using ffmpeg")
+            try:
+              subprocess.call('ffmpeg -i %s -acodec pcm_s16le -ac 1 -ar 16000 %s' %(mp,wa),shell=True)
+            except Exception as e:
+              print("Error while converting: "+str(e))  
 
 def makechunks(path):
     folders=glob.glob(path+'*')
