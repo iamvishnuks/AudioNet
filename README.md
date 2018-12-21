@@ -68,6 +68,10 @@ $ python label_image.py \
     --image=../path/to/generated/spectrogram.jpg
 ```
 
+### Watch the video..
+
+[![Audionet](http://img.youtube.com/vi/nLzVHm34E38/0.jpg)](http://www.youtube.com/watch?v=nLzVHm34E38 "Audionet")
+
 ### Queries??
 
 For any queries shoot a mail at ksvishnu56@gmail.com.
