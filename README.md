@@ -1,6 +1,6 @@
 # AudioNet
 
-**This project is only tested on UBuntu 16.04**
+**This project is only tested on Ubuntu 16.04**
 
 AudioNet is an opensource experiment done using tensorflow and Google's Inception model. What we are doing here in 
 AudioNet is, we are converting audio files to spectrograms. Then we are trainning the model with spectrograms of audio files. Instead of inventing something new we are trying to make use of what is available and yes it was a successfull experiment. Application of audio classification is limitless, speaker recognition, speech recognition are few of them.
